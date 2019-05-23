@@ -9,28 +9,22 @@ public class AgendaProxy implements InterfaceAgenda{
     }
     
     public void addContato(int numero, String nome) {
-        Pattern p = Pattern.compile("[^A-Za-z]");
+        Pattern p = Pattern.compile("[^A-Z a-z]");
         Matcher m = p.matcher(nome);
         boolean has_special_char = m.find();
 
         if(numero > 100000000 && !has_special_char){
-            String num = Integer.toString(numero);
-            String contato = nome + "-" + num;
-            this.contatos.add(contato);
+            a.addContato(numero, nome);
         }else{
             System.out.println("Inserção inválida");
         }
     }
 
     public ArrayList<String> getAgenda() {
-        return this.contatos;
+        return this.a.getAgenda();
     }
 
     public void removeContato(String nome) {
-        for (int i = 0; i < this.contatos.size(); i++) {
-            if (this.contatos.get(i).contains(nome)) {
-                contatos.remove(i);
-            }
-        }
+        this.a.removeContato(nome);
     }
 }

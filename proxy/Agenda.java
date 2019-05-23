@@ -3,9 +3,8 @@ import java.lang.String;
 
 public class Agenda implements InterfaceAgenda{
 
-    public Agenda(){
-        System.out.println("construtor");
-    }
+    public Agenda(){}
+
     public void addContato(int numero, String nome){
         String num = Integer.toString(numero);
         String contato = nome + "-" + num;
