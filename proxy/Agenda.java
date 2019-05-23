@@ -2,8 +2,11 @@ import java.util.*;
 import java.lang.String;
 
 public class Agenda implements InterfaceAgenda{
+    private ArrayList<String> contatos;
 
-    public Agenda(){}
+    public Agenda(){
+        this.contatos = new ArrayList();
+    }
 
     public void addContato(int numero, String nome){
         String num = Integer.toString(numero);

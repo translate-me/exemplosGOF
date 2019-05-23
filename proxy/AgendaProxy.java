@@ -2,10 +2,10 @@ import java.util.regex.*;
 import java.util.*;
 
 public class AgendaProxy implements InterfaceAgenda{
-    private Agenda a;
+    private Agenda agenda;
 
     public AgendaProxy(){
-        this.a = new Agenda();
+        this.agenda = new Agenda();
     }
     
     public void addContato(int numero, String nome) {
@@ -14,17 +14,17 @@ public class AgendaProxy implements InterfaceAgenda{
         boolean has_special_char = m.find();
 
         if(numero > 100000000 && !has_special_char){
-            a.addContato(numero, nome);
+            agenda.addContato(numero, nome);
         }else{
             System.out.println("Inserção inválida");
         }
     }
 
     public ArrayList<String> getAgenda() {
-        return this.a.getAgenda();
+        return this.agenda.getAgenda();
     }
 
     public void removeContato(String nome) {
-        this.a.removeContato(nome);
+        this.agenda.removeContato(nome);
     }
 }
